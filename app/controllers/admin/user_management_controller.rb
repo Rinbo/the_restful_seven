@@ -1,4 +1,6 @@
 class Admin::UserManagementController < ApplicationController
+  before_action :editor?
+
   def index
     @users = User.all
   end
@@ -26,7 +28,7 @@ class Admin::UserManagementController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to admin_root_path
+      redirect_to admin_user_management_index_path
       flash[:notice] = "User was successfully updated."
     else
       render 'edit'

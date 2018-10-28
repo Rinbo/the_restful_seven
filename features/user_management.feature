@@ -15,9 +15,9 @@ Feature: User Management
    Given I am signed is as "editor@example.com"
    And I visit the user management page
    And I click on the "standard@example.com" user "Edit" button
-   And I select "author" in "role" list
+   And I select "author" from "Role"
    And I click "Update"
-   Then I should see "User role was successfully updated"
+   Then I should see "User was successfully updated"
    And I should see "author" within "standard@example.com" row
 
   

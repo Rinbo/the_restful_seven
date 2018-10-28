@@ -86,13 +86,6 @@ Given("I click on {string} article {string} button") do |link_name, link|
   end 
 end
 
-Then("I should see {string} on the {string} article") do |content, content_field|
-  article = Article.find_by(title: content_field)
-  within("#article_#{article.id}") do
-    expect(page).to have_content content
-  end
-end
-
 Given("I click the {string} checkbox") do |checkbox|
   check checkbox
 end
@@ -102,8 +95,4 @@ Given("I click on the {string} user {string} button") do |email_name, edit_butto
   within("#user_#{user.id}") do 
     click_link edit_button    
   end
-end
-
-Given("I select {string} in {string} list") do |string, string2|
-  pending # Write code here that turns the phrase above into concrete actions
 end

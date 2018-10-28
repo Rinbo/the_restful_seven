@@ -13,5 +13,17 @@ class ApplicationController < ActionController::Base
       redirect_to root_path, notice: "You are not authorized to enter"
     end
   end
+
+  def editor?
+    if current_user
+      if (current_user.editor?)
+        true
+      else
+        redirect_to root_path, notice: "You are not authorized to enter"
+      end
+    else
+      redirect_to root_path, notice: "You are not authorized to enter"
+    end    
+  end
   
 end
