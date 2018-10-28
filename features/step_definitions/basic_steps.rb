@@ -100,7 +100,7 @@ end
 Given("I click on the {string} user {string} button") do |email_name, edit_button|
   user = User.find_by(email: email_name)
   within("#user_#{user.id}") do 
-    click_on edit_button    
+    click_link edit_button    
   end
 end
 

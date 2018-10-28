@@ -11,11 +11,10 @@ Feature: User Management
     | author@example.com    | password | author         |
     | editor@example.com    | password | editor         |
 
-
   Scenario: An editor can promote/demote a user to a different role
    Given I am signed is as "editor@example.com"
    And I visit the user management page
-   And I click on the "standard@example.com" user "edit" button
+   And I click on the "standard@example.com" user "Edit" button
    And I select "author" in "role" list
    And I click "Update"
    Then I should see "User role was successfully updated"

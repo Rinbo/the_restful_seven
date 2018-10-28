@@ -10,10 +10,11 @@
         <td>Edit</td>
         <td>delete</td>
       </tr>
-      <% @user.each do |user| %>
+      <% @users.each do |user| %>
         <tr id="<%= dom_id(user) %>">        
           <td><%= user.id %></td>
           <td><%= link_to user.email, admin_user_management_path(user) %></td>
+          <td><%= user.role %></td>
           <td><%= link_to "Edit", edit_admin_user_management_path(user) %></td>
           <td><%= link_to "Delete", admin_user_management_path(user),  method: :delete, data: {confirm: 'Are you sure?'} %></td>
         </tr>
