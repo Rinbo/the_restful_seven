@@ -70,7 +70,7 @@ Given("I attach {string}") do |file_name|
   attach_file('article[image]', "#{::Rails.root}/spec/fixtures/dummy_image.png")
 end
 
-Given("I am signed is as {string}") do |string|
+Given("I am signed in as {string}") do |string|
   user = User.find_by(email: string)
   login_as(user)
 end
