@@ -33,3 +33,7 @@ end
 Then("stop") do
   binding.pry
 end
+
+Then("I should see {string} within {string} row") do |string, string2|
+  pending # Write code here that turns the phrase above into concrete actions
+end
