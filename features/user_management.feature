@@ -12,14 +12,17 @@ Feature: User Management
     | editor@example.com    | password | editor         |
 
   Scenario: An editor can promote/demote a user to a different role
-   Given I am signed in as "editor@example.com"
-   And I visit the user management page
-   And I click on the "standard@example.com" user "Edit" button
-   And I select "author" from "Role"
-   And I click "Update"
-   Then I should see "User was successfully updated"
-   And I should see "author" within "standard@example.com" row
+    Given I am signed in as "editor@example.com"
+    And I visit the user management page
+    And I click on the "standard@example.com" user "Edit" button
+    And I select "author" from "Role"
+    And I click "Update"
+    Then I should see "User was successfully updated"
+    And I should see "author" within "standard@example.com" row
 
   Scenario: A non-editor user cannot access the user management page
-  Given I am signed 
+    Given I am signed in as "author@example.com"
+    And I visit the user management page
+    Then I should see "You are not authorized to enter"
+    And I should be on the main page
    
