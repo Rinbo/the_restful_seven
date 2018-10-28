@@ -47,3 +47,7 @@ Then("I should see {string} within {string} row") do |role_name, email_name|
     expect(page).to have_content role_name
   end
 end
+
+Then("I should be on the main page") do
+  expect(current_path).to eq root_path
+end

@@ -96,3 +96,7 @@ Given("I click on the {string} user {string} button") do |email_name, edit_butto
     click_link edit_button    
   end
 end
+
+Given("I confirm popup") do
+  page.driver.browser.switch_to.alert.accept
+end
